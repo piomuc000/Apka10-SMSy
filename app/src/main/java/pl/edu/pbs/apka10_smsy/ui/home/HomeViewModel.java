@@ -50,4 +50,10 @@ public class HomeViewModel extends ViewModel implements SensorEventListener {
     public void unregisterListener() {
         mSensorManager.unregisterListener(this);
     }
+
+    @Override
+    protected void onCleared() {
+        unregisterListener();
+        super.onCleared();
+    }
 }
